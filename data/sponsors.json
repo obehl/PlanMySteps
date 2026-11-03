@@ -1,0 +1,20 @@
+[
+  {
+    "id": "demo-cafe-indiranagar",
+    "name": "Demo Partner Café",
+    "category": "chai",
+    "lat": 12.97195,
+    "lon": 77.64085,
+    "offer": "10% off filter coffee for Plan My Steps walkers",
+    "demo": true
+  },
+  {
+    "id": "demo-bakery-indiranagar",
+    "name": "Demo Partner Bakery",
+    "category": "bakery",
+    "lat": 12.97830,
+    "lon": 77.63870,
+    "offer": "Free cookie with any purchase over ₹200",
+    "demo": true
+  }
+]

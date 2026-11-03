@@ -1,0 +1,11 @@
+{
+  "name": "plan-my-steps",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Plan walks that help you explore your neighbourhood, built for Indian streets.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "start": "python3 -m http.server 8080"
+  }
+}

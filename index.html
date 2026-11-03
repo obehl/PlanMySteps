@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Plan My Steps</title>
+  <meta name="description" content="Plan walks that help you explore your neighbourhood, on streets that are actually walkable." />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="map" aria-label="Map"></div>
+
+  <aside id="panel">
+    <header>
+      <h1>👣 Plan My Steps</h1>
+      <p class="tag">Explore your neighbourhood, one walkable street at a time.</p>
+    </header>
+
+    <section>
+      <h2>1 · Where are you starting?</h2>
+      <form id="search" class="row">
+        <input id="q" type="search" placeholder="e.g. Indiranagar, Bengaluru" autocomplete="off" />
+        <button type="submit">Go</button>
+      </form>
+      <button id="locate" class="link">📍 Use my location</button>
+      <span class="hint">…or tap the map to drop your start pin.</span>
+    </section>
+
+    <section>
+      <h2>2 · What's your mood?</h2>
+      <div id="moods" class="chips" role="radiogroup"></div>
+      <p id="mood-blurb" class="hint"></p>
+    </section>
+
+    <section>
+      <h2>3 · Anything to get done?</h2>
+      <div id="tasks" class="chips"></div>
+    </section>
+
+    <section>
+      <h2>4 · Step goal: <output id="steps-out">6,000</output></h2>
+      <input id="steps" type="range" min="1000" max="20000" step="500" value="6000" />
+    </section>
+
+    <button id="plan" class="primary" disabled>Drop a start pin first</button>
+    <p id="status" class="hint" role="status"></p>
+
+    <section id="result" hidden>
+      <div class="stats">
+        <div><b id="r-steps"></b><span>steps</span></div>
+        <div><b id="r-km"></b><span>km</span></div>
+        <div><b id="r-min"></b><span>min</span></div>
+        <div><b id="r-walk"></b><span>walkable</span></div>
+      </div>
+      <ol id="r-stops"></ol>
+      <ul id="r-notes" class="notes"></ul>
+      <a id="r-gmaps" class="primary button" target="_blank" rel="noopener">Open in Google Maps ↗</a>
+      <button id="r-again" class="link">↻ Show me a different walk</button>
+      <div class="rate">
+        <span>How was this walk?</span>
+        <button data-rate="up" aria-label="Good walk">👍</button>
+        <button data-rate="down" aria-label="Bad walk">👎</button>
+      </div>
+    </section>
+
+    <footer>
+      <label><input id="layer" type="checkbox" /> Show walkability of every street</label>
+      <div class="legend">
+        <span style="--c:#1a9850">Great</span><span style="--c:#a6d96a">Okay</span>
+        <span style="--c:#fdae61">Busy</span><span style="--c:#d73027">Avoid</span>
+      </div>
+      <p class="hint">Street data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors. Scores are estimates, so trust your eyes on the street.</p>
+    </footer>
+  </aside>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
